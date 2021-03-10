@@ -60,7 +60,8 @@ module.exports = app => {
       _id: request.query.id
     }, {
       $set: {
-        done: true
+        done: true,
+        pending: false,
       }
     }, (error) => {
       if (error) {
@@ -77,6 +78,31 @@ module.exports = app => {
       }
     })
 
+  })
+
+  app.put("/pending/:id", (request, response, next) => {
+
+    ModelTask.updateOne({
+      _id: request.query.id
+    }, {
+      $set: {
+        pending: true,
+        done: false
+      }
+    }, (error) => {
+      if (error) {
+        throw new Error("Error put /pending/id")
+      }
+
+      try {
+        response.status(200).json({
+          code: 200,
+          message: `Error put /pending/id`
+        });
+      } catch (_) {
+        throw new Error("Error put /pending/id")
+      }
+    })
   })
 
 }
