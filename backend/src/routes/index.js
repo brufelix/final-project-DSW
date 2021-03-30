@@ -1,4 +1,10 @@
+const { ModelTask } = require("../model");
+
 module.exports = app => {
+  app.get("/", (_, response, next) => {
+    return response.json({ message: "Welcome: TASK API" });
+  })
+
   app.get("/tasks", (_, response, next) => {
 
     ModelTask.find((error, result) => {
@@ -32,6 +38,26 @@ module.exports = app => {
     })
 
   })
+
+  app.post("/task/user", (request, response, next) => {
+
+    ModelTask.create({
+      description: request.query.description
+    }, (error, result) => {
+      if (error) {
+        throw new Error("Error get /task/user")
+      }
+
+      try {
+        response.status(200).json({
+          code: 200,
+          message: `task created`
+        });
+      } catch (_) {
+        throw new Error("Error get /task/user")
+      }
+    })
+})
 
   app.delete("/task/:id", (request, response, next) => {
 

@@ -1,47 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/index.css">
-  <title>ToDo</title>
+    <meta charset='utf-8'>
+    <title>My Tasks</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+
+    <script src='../js/index.js'></script>
 </head>
-
 <body>
-  <header id="header">
-    <h1 class="title-main">
-      toDo
-    </h1>
-  </header>
-  <div class="container-input-search">
-    <input class="input-search" type="text">
-  </div>
-  <div class="container-tasks">
-    <table id="table">
-      <thead>
-        <tr class="thead-items-container">
-          <th class="thead-item">N°</th>
-          <th class="thead-item">Tarefa</th>
-          <th class="thead-item">Excluir</th>
-          <th class="thead-item">Concluir</th>
-          <th class="thead-item">Inconcluso</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="tbody-items-container">
-          <td class="tbody-item">Number</td>
-          <td class="tbody-item">Description</td>
-          <td class="tbody-item">Icon</td>
-          <td class="tbody-item">Icon</td>
-          <td class="tbody-item">Icon</td>
-        </tr>
-    </table>
-    </tbody>
-  </div>
-  <footer id="footer">UFC</footer>
-</body>
-<script src="../js/index.js"></script>
+    <nav>
+        <ul>
+            <img src="../img/cc.png">  
+            <li><a href="index.html">Tarefas</a>
+            <li><a href="#">Sobre</a>
+                <ul>
+                    <li><a href="#">Tecnologias usadas</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </nav>
+    <br>
+    <br>
+    <b><p style="color:rgb(0, 0, 0); text-align: center; font-family: 'Comfortaa', sans-serif ; font-size: 25px;">Tarafas </p>
+    <p style="color:rgb(124, 122, 122); text-align: center; font-family: 'Comfortaa', sans-serif ; font-size: 20px;">Cadastro</p><hr><br>
+    <div>   
+        <input style="width: 600px; height: 20px; position: relative; left: 250px;" id="input_txt" type="text" name="novatarefa" maxlength="70%" placeholder="Nova tarefa"> 
+        <button id='bt1' > + </button>
+        </b><button id='bt2' > X </button>
+        <button id='bt3' "> Buscar </button>
+    </div> 
+    <br>
+    <br>
+    <b><p style="color:rgb(0, 0, 0); text-align: center; font-family: 'Comfortaa', sans-serif ; font-size: 25px;"> Descrição </p><hr>
+    <br>
+    <div id="divtag">
+    </div>
 
+</body>
 </html>
