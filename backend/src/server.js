@@ -1,9 +1,6 @@
 const express = require("express");
 const app = express();
 
-const {
-  ModelTask
-} = require("./model")
 const middleware = require("./middlewares")
 const routes = require("./routes")
 
